@@ -1,10 +1,10 @@
 import React,{ useState } from 'react';
-import { Radio, RadioGroup,Stack } from '@chakra-ui/react';
+import { Radio, RadioGroup,Stack,Button } from '@chakra-ui/react';
 
-function Question({question}) {
+function Question({question,setCurrentQue}) {
 
 	const [value, setValue] = useState("");
-	console.log(value)
+	// console.log(value)
 	return (
 		<div className="question">
 			<h3>{question.number}. {question.question}</h3>
@@ -16,6 +16,15 @@ function Question({question}) {
 			    	<Radio value={question.options[3]}>{question.options[3]}</Radio>
 				</Stack>
 			</RadioGroup>
+			<Button 
+			  colorScheme='whatsapp' 
+			  onClick={()=>{
+			  	console.log(value)
+			  	setCurrentQue(question.number+1)
+			  }}
+			>
+			  Submit
+			</Button>
 		</div>
 	)
 }
