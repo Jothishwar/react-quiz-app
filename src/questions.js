@@ -1,4 +1,4 @@
-const questions = {
+const questions = [
 	{
 		number : 1,
 		question : "The script tag must be placed in",
@@ -29,6 +29,6 @@ const questions = {
 		options : ["head","head and body","title and head","all of the above"],
 		answer : "head and body"
 	},
-}
+]
 
-export questions;
+export default questions;
