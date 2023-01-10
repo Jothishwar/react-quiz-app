@@ -2,10 +2,7 @@ import React,{ useState } from 'react';
 import { Radio, RadioGroup,Stack,Button } from '@chakra-ui/react';
 import { Card, CardHeader, CardBody, CardFooter,Heading,StackDivider } from '@chakra-ui/react';
 
-function Question({question,setCurrentQue}) {
-
-	const [value, setValue] = useState("");
-	// console.log(value)
+function Question({question,currentQue,setCurrentQue,btntext,handleSubmit,value,setValue }) {
 	return (
 		<div className="question">
 			<Card variant = "filled" size="md" >
@@ -22,15 +19,20 @@ function Question({question,setCurrentQue}) {
 						</Stack>
 					</RadioGroup>
 				</CardBody>
-				<CardFooter>
+				<CardFooter justify="space-between" flexWrap="wrap">
+					<Button 
+					  colorScheme='whatsapp' 
+					  onClick={handleSubmit}
+					>
+					  Submit
+					</Button>
 					<Button 
 					  colorScheme='whatsapp' 
 					  onClick={()=>{
-					  	console.log(value)
-					  	setCurrentQue(question.number+1)
+					  	setCurrentQue(currentQue+1)
 					  }}
 					>
-					  Submit
+					  {btntext}
 					</Button>
 				</CardFooter>
 			</Card>
