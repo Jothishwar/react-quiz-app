@@ -10,6 +10,7 @@ function Questions() {
 			{ currentQue <= questions.length &&(
 				<Question key={questions.number} question={questions[currentQue-1]} setCurrentQue={setCurrentQue} />
 			)}
+			
 		</div>
 	)
 }
