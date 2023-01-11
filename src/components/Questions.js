@@ -3,22 +3,22 @@ import questions from "../questions";
 import Question from "./Question";
 
 function Questions() {
-	const [value, setValue] = useState("");
 	const [currentQue, setCurrentQue] = useState(1);
-	const handleSubmit=()=>{
-		console.log(value);
-	}
+	const [score, setScore] = useState(0);
 
 	return (
 		<div className="question container">
 			{ currentQue < questions.length &&(
-				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Next"} handleSubmit={handleSubmit} value={value} setValue={setValue} />
+				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Next"} score={score} setScore={setScore} />
 			)}
 			{ currentQue === questions.length &&(
-				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Finish"} handleSubmit={handleSubmit} value={value} setValue={setValue} />
+				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Finish"} score={score} setScore={setScore} />
 			)}
-			{ currentQue > questions.length &&(
+			{ currentQue > questions.length && (
+				<>
 				<p>end of quiz</p>
+				<p>Score : {score}</p>
+				</>
 			)}
 		</div>
 	)
