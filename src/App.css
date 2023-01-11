@@ -29,3 +29,10 @@ h1{
 	font-size: xx-large !important;
 	font-weight: 500 !important;
 }
+
+.css-1togpkf{
+	box-shadow: none !important;
+}
+.css-15hndkl{
+	box-shadow: var(--chakra-shadows-base);
+}

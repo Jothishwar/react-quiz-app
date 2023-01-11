@@ -11,19 +11,18 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore }) {
 	const handleSubmit=()=>{
 		if(question.answer === value){
 			setScore(score+1)
-			console.log("CRCT")
+			// console.log("CRCT")
 			setIsDisabled(!isDisabled)
 			setIsAnswered(true)
 			setIsCrct(true)
 		}else{
-			console.log("Wrong")
+			// console.log("Wrong")
 			setIsDisabled(!isDisabled)
 			setIsAnswered(true)
 			setIsCrct(false)
 		}
 	}
 	console.log("score:",score)
-
 	return (
 		<div className="question">
 			<Card variant = "filled" size="md" >
@@ -47,10 +46,13 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore }) {
 					    	</Radio>
 						</Stack>
 					</RadioGroup>
-					<Card>
+					<Card varient="unstyled">
 						<CardBody>
 							{ isCrct && isAnswered && (
-								<Text color={"green"}>Correct Answer</Text>
+								<Text color={"green"}>Correct Answer 😊🎉</Text>
+							)}
+							{!isCrct && isAnswered && (
+								<Text color={"red"}>Wrong Answer 😟</Text>	
 							)}
 						</CardBody>
 					</Card>
@@ -68,6 +70,7 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore }) {
 					  onClick={()=>{
 					  	setCurrentQue(currentQue+1)
 					  	setIsDisabled(!isDisabled)
+					  	setIsAnswered(false)
 					  }}
 					  isDisabled={!isDisabled}
 					>
