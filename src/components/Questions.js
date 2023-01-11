@@ -9,10 +9,10 @@ function Questions() {
 	return (
 		<div className="question container">
 			{ currentQue < questions.length &&(
-				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Next"} score={score} setScore={setScore} />
+				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Next"} score={score} setScore={setScore} color={"blue"} />
 			)}
 			{ currentQue === questions.length &&(
-				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Finish"} score={score} setScore={setScore} />
+				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Finish"} score={score} setScore={setScore} color={"whatsapp"} />
 			)}
 			{ currentQue > questions.length && (
 				<>

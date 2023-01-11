@@ -1,8 +1,8 @@
 import React,{ useState } from 'react';
 import { Radio, RadioGroup,Stack,Button } from '@chakra-ui/react';
-import { Card, CardHeader, CardBody, CardFooter,Heading,StackDivider,Text } from '@chakra-ui/react';
+import { Card, CardHeader, CardBody, CardFooter,Heading,StackDivider,Badge } from '@chakra-ui/react';
 
-function Question({question,currentQue,setCurrentQue,btntext,score,setScore }) {
+function Question({question,currentQue,setCurrentQue,btntext,score,setScore,color }) {
 	const [value, setValue] = useState(null);
 	const [isDisabled, setIsDisabled] = useState(false);
 	const [isCrct, setIsCrct] = useState(null);
@@ -49,24 +49,24 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore }) {
 					<Card varient="unstyled">
 						<CardBody>
 							{ isCrct && isAnswered && (
-								<Text color={"green"}>Correct Answer 😊🎉</Text>
+								<Badge colorScheme={"green"} variant="subtle" fontSize="1em" mt="5" mb="0">Correct Answer 😊🎉</Badge>
 							)}
 							{!isCrct && isAnswered && (
-								<Text color={"red"}>Wrong Answer 😟</Text>	
+								<Badge colorScheme={"red"} variant="subtle" fontSize="1em" mt="5" mb="0">Wrong Answer 😟</Badge>	
 							)}
 						</CardBody>
 					</Card>
 				</CardBody>
-				<CardFooter justify="space-between" flexWrap="wrap">
+				<CardFooter justify="space-between" flexWrap="wrap" mt="0" pt="0">
 					<Button 
-					  colorScheme='whatsapp' 
+					  colorScheme="blue" 
 					  onClick={handleSubmit}
 					  isDisabled={isDisabled}
 					>
 					  Submit
 					</Button>
 					<Button 
-					  colorScheme='whatsapp' 
+					  colorScheme={color} 
 					  onClick={()=>{
 					  	setCurrentQue(currentQue+1)
 					  	setIsDisabled(!isDisabled)
