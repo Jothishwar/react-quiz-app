@@ -1,7 +1,7 @@
 import React,{ useState } from 'react'
 import questions from "../questions";
 import Question from "./Question";
-import { Card, CardHeader, CardBody, CardFooter,Heading,Button,Text } from '@chakra-ui/react';
+import { Card, CardHeader, CardBody, CardFooter,Heading,Button,Text,Progress } from '@chakra-ui/react';
 
 function Questions({setIsShown}) {
 	const [currentQue, setCurrentQue] = useState(1);
@@ -13,6 +13,7 @@ function Questions({setIsShown}) {
 
 	return (
 		<div className="question container">
+			<Progress size={"sm"} height={"6px"} hasStripe isAnimated value={currentQue/questions.length*100} borderRadius="5px" position="relative" top="6.25px" zIndex="99" />
 			{ currentQue < questions.length &&(
 				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Next"} score={score} setScore={setScore} color={"blue"} />
 			)}

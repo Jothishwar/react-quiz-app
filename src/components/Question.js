@@ -1,6 +1,6 @@
 import React,{ useState } from 'react';
 import { Radio, RadioGroup,Stack,Button } from '@chakra-ui/react';
-import { Card, CardHeader, CardBody, CardFooter,Heading,StackDivider,Badge } from '@chakra-ui/react';
+import { Card, CardHeader, CardBody, CardFooter,Heading,StackDivider,Badge,Text } from '@chakra-ui/react';
 
 function Question({question,currentQue,setCurrentQue,btntext,score,setScore,color }) {
 	const [value, setValue] = useState(null);
@@ -25,7 +25,7 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore,colo
 	console.log("score:",score)
 	return (
 		<div className="question">
-			<Card variant = "filled" size="md" boxShadow="dark-lg">
+			<Card variant = "filled" size="md" boxShadow="dark-lg" borderRadius="10px">
 				<CardHeader>
 					<Heading size="md">{question.number}. {question.question}</Heading>
 				</CardHeader>
@@ -33,16 +33,16 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore,colo
 					<RadioGroup onChange={setValue} value={value}>
 					  	<Stack direction='column' divider={<StackDivider borderColor='grey.200' />} spacing={4} >
 					    	<Radio value={question.options[0]} isChecked={false} isReadOnly={isDisabled} >
-					    		{question.options[0]}
+					    		<Text color={ isAnswered?(question.answer===question.options[0] ? "green":"none"):"black"} >{question.options[0]}</Text>
 					    	</Radio>
 					    	<Radio value={question.options[1]} isChecked={false} isReadOnly={isDisabled} >
-					    		{question.options[1]}
+					    		<Text color={ isAnswered?(question.answer===question.options[1] ? "green":"none"):"black"} >{question.options[1]}</Text>
 					    	</Radio>
 					    	<Radio value={question.options[2]} isChecked={false} isReadOnly={isDisabled} >
-					    		{question.options[2]}
+					    		<Text color={ isAnswered?(question.answer===question.options[2] ? "green":"none"):"black"} >{question.options[2]}</Text>
 					    	</Radio>
 					    	<Radio value={question.options[3]} isChecked={false} isReadOnly={isDisabled} >
-					    		{question.options[3]}
+					    		<Text color={ isAnswered?(question.answer===question.options[3] ? "green":"none"):"black"} >{question.options[3]}</Text>
 					    	</Radio>
 						</Stack>
 					</RadioGroup>
