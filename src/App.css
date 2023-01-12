@@ -24,15 +24,3 @@ body{
 	border-radius: 20px;
 	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-
-h1{
-	font-size: xx-large !important;
-	font-weight: 500 !important;
-}
-
-.css-1togpkf{
-	box-shadow: none !important;
-}
-.css-15hndkl{
-	box-shadow: var(--chakra-shadows-base);
-}

@@ -1,5 +1,5 @@
 import './App.css';
-import { Button } from '@chakra-ui/react';
+import { Button,Heading } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import Questions from './components/Questions'
 import { useState } from 'react';
@@ -15,7 +15,7 @@ function App() {
     <div className="app">
       {!isShown && (
         <div className="home">
-          <h1>Quiz app </h1>
+          <Heading>Quiz app </Heading>
           <p>Click the button below to start the quiz.<br></br>
           All the best! </p>
           <Button 
@@ -29,7 +29,7 @@ function App() {
       )}
 
       {isShown && (
-        <Questions />
+        <Questions setIsShown={setIsShown}/>
       )}
     </div>
   );

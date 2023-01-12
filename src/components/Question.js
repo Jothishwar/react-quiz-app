@@ -25,7 +25,7 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore,colo
 	console.log("score:",score)
 	return (
 		<div className="question">
-			<Card variant = "filled" size="md" >
+			<Card variant = "filled" size="md" boxShadow="dark-lg">
 				<CardHeader>
 					<Heading size="md">{question.number}. {question.question}</Heading>
 				</CardHeader>
@@ -46,7 +46,7 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore,colo
 					    	</Radio>
 						</Stack>
 					</RadioGroup>
-					<Card varient="unstyled">
+					<Card varient="unstyled" boxShadow="none">
 						<CardBody>
 							{ isCrct && isAnswered && (
 								<Badge colorScheme={"green"} variant="subtle" fontSize="1em" mt="5" mb="0">Correct Answer 😊🎉</Badge>
