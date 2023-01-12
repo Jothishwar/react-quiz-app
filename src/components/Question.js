@@ -22,7 +22,7 @@ function Question({question,currentQue,setCurrentQue,btntext,score,setScore,colo
 			setIsCrct(false)
 		}
 	}
-	console.log("score:",score)
+	// console.log("score:",score)
 	return (
 		<div className="question">
 			<Card variant = "filled" size="md" boxShadow="dark-lg" borderRadius="10px">
