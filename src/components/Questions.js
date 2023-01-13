@@ -21,17 +21,19 @@ function Questions({setIsShown}) {
 				<Question key={questions.number} question={questions[currentQue-1]} currentQue={currentQue} setCurrentQue={setCurrentQue} btntext={"Finish"} score={score} setScore={setScore} color={"whatsapp"} />
 			)}
 			{ currentQue > questions.length && (
-				<Card variant="filled">
+				<Card variant = "filled" size={{base:"sm",md:"md",lg:"lg"}} w={{base:"70vw",md:"md",lg:"lg"}} fontSize={{base:"24px",md:"md",lg:"lg"}} boxShadow="dark-lg" borderRadius="10px">
 					<CardHeader>
-						<Heading>Quiz Completed</Heading>
+						<Heading size="md" fontSize={{base:"0.9em",md:"1.4em",lg:"1.9em"}}>Quiz Completed</Heading>
 					</CardHeader>
 					<CardBody>
-						<Text>Your Score : {score/questions.length*100}% ({score}/{questions.length})</Text>
+						<Text fontSize={{base:"0.7em",md:"1.1em",lg:"1.6em"}}>Your Score : {score/questions.length*100}% ({score}/{questions.length})</Text>
 					</CardBody>
 					<CardFooter>
 						<Button
 							colorScheme="whatsapp"
 							onClick={handleRestart}
+							size={{base:"sm",md:"md",lg:"lg"}}
+							fontSize={{base:"0.5em",md:"1.1em",lg:"2em"}}
 						>
 							Restart
 						</Button>
